@@ -19,6 +19,7 @@ pipeline {
                     ]]
                 ])
             }
+        }
         stage('build and push frontend image') {
             agent {
                 label 'master'
