@@ -7,6 +7,10 @@ pipeline {
         DH = credentials('dh-credentials')
     }
     stages {
+        stage('Checkout') {
+            agent {
+                label 'master'
+            }
         steps {
                 checkout([
                     $class: 'GitSCM',
@@ -17,6 +21,7 @@ pipeline {
                     ]]
                 ])
             }
+        }
         stage('build and push frontend image!') {
             when {
                 branch 'main'
