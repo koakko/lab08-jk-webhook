@@ -90,7 +90,7 @@ pipeline {
                     docker logout
                     docker login -u $DH_USR -p $DH_PSW
                     docker pull koak/lab08-webhook:backend
-                    docker run -d -p 5000:5000 cbend koak/lab08-webhook:backend
+                    docker run -d -p 5000:5000 --name cbend koak/lab08-webhook:backend
                 '''
             }
         }
