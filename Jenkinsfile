@@ -106,7 +106,7 @@ pipeline {
                 '''
             }
         }
-        stage('Checkout dev branch')
+        stage('Checkout dev branch') {
         when {
             branch 'dev'
         }
@@ -131,6 +131,7 @@ pipeline {
                 '''
             }
         }
+    }
     }
     post {
         always {
