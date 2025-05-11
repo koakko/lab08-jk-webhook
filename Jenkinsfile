@@ -10,14 +10,8 @@ pipeline {
         stage('Checkout') {
             agent { label 'master' }
             steps {
-                checkout([
-                    $class: 'GitSCM',
-                    branches: [[name: '*/${BRANCH_NAME}']],
-                    userRemoteConfigs: [[
-                        url: 'git@github.com:koakko/lab08-jk-webhook.git',
-                        credentialsId: 'gt-ssh'
-                    ]]
-                ])
+                checkout scm // Checks out the branch that triggered the build
+                echo "Checked out branch: ${env.BRANCH_NAME}"
             }
         }
         stage('build and push frontend image!') {
