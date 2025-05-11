@@ -12,14 +12,7 @@ pipeline {
                 label 'master'
             }
         steps {
-                checkout([
-                    $class: 'GitSCM',
-                    branches: [[name: '*/main']],
-                    userRemoteConfigs: [[
-                        url: 'git@github.com:koakko/lab08-jk-webhook.git',
-                        credentialsId: 'gt-ssh'
-                    ]]
-                ])
+                checkout scm
             }
         }
         stage('build and push frontend image!') {
