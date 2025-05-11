@@ -7,7 +7,7 @@ pipeline {
         DH = credentials('dh-credentials')
     }
     stages {
-        stage('Checkout') {
+        stage('Checkoutt') {
             agent { label 'master' }
             steps {
                 checkout scm // Checks out the branch that triggered the build
