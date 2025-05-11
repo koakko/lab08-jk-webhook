@@ -7,6 +7,19 @@ pipeline {
         DH = credentials('dh-credentials')
     }
     stages {
+        stage('Checkout') {
+            agent { label 'master' }
+            steps {
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: 'main']],
+                    userRemoteConfigs: [[
+                        url: 'git@github.com:koakko/lab08-jk-webhook.git',
+                        credentialsId: 'github-cred'
+                    ]]
+                ])
+            }
+        }
         stage('build and push frontend image') {
             agent {
                 label 'master'
