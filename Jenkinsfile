@@ -12,7 +12,7 @@ pipeline {
             steps {
                 checkout([
                     $class: 'GitSCM',
-                    branches: [[name: '*/main']],
+                    branches: [[name: '*/${BRANCH_NAME}']],
                     userRemoteConfigs: [[
                         url: 'git@github.com:koakko/lab08-jk-webhook.git',
                         credentialsId: 'gt-ssh'
