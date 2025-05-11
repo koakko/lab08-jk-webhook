@@ -22,7 +22,7 @@ pipeline {
                 ])
             }
         }
-        stage('build and push frontend image!') {
+        stage('build and push frontend image') {
             when {
                 branch 'main'
             }
