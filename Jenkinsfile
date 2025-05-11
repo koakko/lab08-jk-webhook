@@ -108,7 +108,7 @@ pipeline {
         }
         failure {
             node('master') {
-                sh 'echo "Your pipeline is fail!!"'
+                sh 'echo "Your pipeline is fail!"'
             }
         }
         }
