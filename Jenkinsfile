@@ -98,7 +98,7 @@ pipeline {
     post {
         always {
             node('master') {
-                sh 'echo "Your pipeline is finish!"'
+                sh 'echo "Your pipeline is finish!!"'
             }
         }
         success {
