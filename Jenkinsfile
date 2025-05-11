@@ -60,7 +60,7 @@ pipeline {
         }
         stage('deploy frontend') {
             agent {
-                label 'backend-agent'
+                label 'frontend-agent'
             }
             steps {
                 sh '''
