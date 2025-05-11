@@ -15,7 +15,7 @@ pipeline {
                     branches: [[name: '*/${BRANCH_NAME}']],
                     userRemoteConfigs: [[
                         url: 'git@github.com:koakko/lab08-jk-webhook.git',
-                        credentialsId: 'github-cred'
+                        credentialsId: 'gt-ssh'
                     ]]
                 ])
             }
